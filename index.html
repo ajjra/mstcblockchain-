@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MST Blockchain | AJJRA TECHNO HUB</title>
+  <meta name="description" content="MST Blockchain - Public EVM Compatible Layer 1 Blockchain. MSTC, Smart Contracts, NFT, RWA, Carbon Credits and Web3.">
+  <meta name="keywords" content="MST Blockchain, MSTC, MSTC Blockchain, Layer 1, EVM, Web3, NFT, RWA, Carbon Credit">
+  <meta name="author" content="AJJRA TECHNO HUB">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #06110c;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3, 12, 8, 0.96);
+      border-bottom: 1px solid #1e5f3c;
+      padding: 15px 5%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #42f58d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #42f58d;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top, #124d31 0%, #06110c 55%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #42f58d;
+      border-radius: 30px;
+      color: #42f58d;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 80px);
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #42f58d;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      color: #c9d8cf;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #42f58d;
+      color: #041008;
+    }
+
+    .secondary {
+      border: 1px solid #42f58d;
+      color: #42f58d;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 45px;
+      color: #42f58d;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 1100px;
+      margin: -40px auto 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stat {
+      background: #0b2116;
+      border: 1px solid #1c613d;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      color: #42f58d;
+    }
+
+    .stat span {
+      color: #b9c8bf;
+      font-size: 13px;
+    }
+
+    .about {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      color: #d2ddd6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #0a1c12;
+      border: 1px solid #174c30;
+      border-radius: 14px;
+      padding: 28px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #42f58d;
+    }
+
+    .card h3 {
+      color: #42f58d;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #bac9c0;
+      font-size: 15px;
+    }
+
+    .network-box {
+      max-width: 1000px;
+      margin: auto;
+      background: #0a1c12;
+      border: 1px solid #174c30;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .network-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 22px;
+      border-bottom: 1px solid #173c29;
+    }
+
+    .network-row:last-child {
+      border-bottom: none;
+    }
+
+    .network-row span:first-child {
+      color: #9fb2a6;
+    }
+
+    .network-row span:last-child {
+      color: #42f58d;
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .register {
+      text-align: center;
+      background: linear-gradient(135deg, #0b2e1c, #06110c);
+    }
+
+    .register h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .register p {
+      color: #c7d5cd;
+      margin-bottom: 25px;
+    }
+
+    .malayalam {
+      background: #071a10;
+    }
+
+    .malayalam-box {
+      max-width: 1000px;
+      margin: auto;
+      background: #0a2115;
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid #1b5a39;
+    }
+
+    .malayalam-box h3 {
+      color: #42f58d;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #030a06;
+      color: #91a398;
+      border-top: 1px solid #173d28;
+    }
+
+    footer strong {
+      color: #42f58d;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .stats,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .network-row {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .network-row span:last-child {
+        text-align: left;
+      }
+
+      .register h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">AJJRA TECHNO HUB</div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#technology">Technology</a></li>
+      <li><a href="#ecosystem">Ecosystem</a></li>
+      <li><a href="#usecases">Use Cases</a></li>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#mstc">MSTC</a></li>
+      <li><a href="#register">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div>
+
+    <div class="badge">
+      PUBLIC • EVM-COMPATIBLE • LAYER 1
+    </div>
+
+    <h1>
+      MST <span>Blockchain</span>
+    </h1>
+
+    <p>
+      A public EVM-compatible Layer 1 blockchain designed
+      for scalable Web3 applications, smart contracts,
+      digital assets and decentralized ecosystems.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        class="btn primary"
+        href="https://mstblockchain.com/portal/register/VeY52672"
+        target="_blank"
+      >
+        Register on MST
+      </a>
+
+      <a
+        class="btn secondary"
+        href="https://mstscan.com"
+        target="_blank"
+      >
+        MST Explorer
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="stats">
+
+  <div class="stat">
+    <strong>3s</strong>
+    <span>Average Block Time</span>
+  </div>
+
+  <div class="stat">
+    <strong>4000+</strong>
+    <span>TPS – Published Claim</span>
+  </div>
+
+  <div class="stat">
+    <strong>0.001</strong>
+    <span>Average Tx Fee – MSTC</span>
+  </div>
+
+  <div class="stat">
+    <strong>EVM</strong>
+    <span>Compatible</span>
+  </div>
+
+</div>
+
+<section id="about">
+
+  <h2 class="section-title">
+    About MST Blockchain
+  </h2>
+
+  <div class="about">
+
+    <p>
+      MST Blockchain is a public Layer 1 blockchain with
+      EVM compatibility. It is designed to support
+      decentralized applications, smart contracts,
+      digital assets and enterprise blockchain use cases.
+    </p>
+
+    <br>
+
+    <p>
+      Developers can use familiar Web3 tools such as
+      Solidity, MetaMask, Remix and Hardhat to build
+      applications on the network.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="technology">
+
+  <h2 class="section-title">
+    Blockchain Technology
+  </h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>PoSA</h3>
+      <p>
+        Proof of Stake Authority based consensus
+        architecture for network validation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>EVM Compatible</h3>
+      <p>
+        Supports Ethereum-compatible smart contracts
+        and familiar Web3 development tools.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Contracts</h3>
+      <p>
+        Developers can create decentralized applications
+        using Solidity and EVM tooling.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Validators</h3>
+      <p>
+        Network infrastructure is supported by validators
+        participating in blockchain validation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Low Fees</h3>
+      <p>
+        MST publishes a low average transaction fee
+        figure for its network.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Web3 Ready</h3>
+      <p>
+        Suitable for NFTs, RWA, DeFi, digital identity,
+        gaming and other decentralized applications.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="ecosystem">
+
+  <h2 class="section-title">
+    MST Ecosystem
+  </h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>SARAL Protocol</h3>
+      <p>
+        A protocol component within the MST ecosystem.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>WASMify</h3>
+      <p>
+        Technology related to WebAssembly-based
+        blockchain development.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>BridgeKey</h3>
+      <p>
+        Ecosystem infrastructure associated with
+        blockchain interoperability.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>MST Buddy</h3>
+      <p>
+        An ecosystem application and user-facing
+        blockchain utility.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>ProofEasy</h3>
+      <p>
+        Blockchain-based proof and verification
+        related ecosystem service.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>ChainPay</h3>
+      <p>
+        Payment-focused blockchain ecosystem solution.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="usecases">
+
+  <h2 class="section-title">
+    MST Blockchain Use Cases
+  </h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>RWA</h3>
+      <p>
+        Real World Asset tokenization and digital
+        ownership infrastructure.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Carbon Credits</h3>
+      <p>
+        Blockchain-based carbon credit tracking,
+        verification and retirement.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>NFT</h3>
+      <p>
+        NFT creation, ownership, ticketing and
+        digital asset applications.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Digital Identity</h3>
+      <p>
+        Blockchain-based identity and KYC-related
+        applications.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Supply Chain</h3>
+      <p>
+        Transparent and verifiable supply chain
+        records.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Certificates</h3>
+      <p>
+        On-chain certificates and education credentials.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Gaming</h3>
+      <p>
+        Blockchain ownership of digital gaming assets.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Governance</h3>
+      <p>
+        Decentralized voting and DAO-related
+        applications.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Tokenization</h3>
+      <p>
+        Digital representation of assets and
+        blockchain-based ownership models.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="network">
+
+  <h2 class="section-title">
+    MST Network
+  </h2>
+
+  <div class="network-box">
+
+    <div class="network-row">
+      <span>Blockchain Type</span>
+      <span>Public Layer 1</span>
+    </div>
+
+    <div class="network-row">
+      <span>Virtual Machine</span>
+      <span>EVM Compatible</span>
+    </div>
+
+    <div class="network-row">
+      <span>Consensus</span>
+      <span>PoSA</span>
+    </div>
+
+    <div class="network-row">
+      <span>Native Asset</span>
+      <span>MSTC</span>
+    </div>
+
+    <div class="network-row">
+      <span>Average Block Time</span>
+      <span>3 Seconds</span>
+    </div>
+
+    <div class="network-row">
+      <span>Validators</span>
+      <span>80,000+ Published Figure</span>
+    </div>
+
+    <div class="network-row">
+      <span>Explorer</span>
+      <span>mstscan.com</span>
+    </div>
+
+    <div class="network-row">
+      <span>Testnet Explorer</span>
+      <span>testnet.mstscan.com</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="mstc">
+
+  <h2 class="section-title">
+    MSTC
+  </h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Native Asset</h3>
+      <p>
+        MSTC is the native blockchain asset used
+        within the MST network.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Transaction Fees</h3>
+      <p>
+        Network transactions require MSTC for
+        applicable blockchain fees.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Validation</h3>
+      <p>
+        Validators participate in maintaining and
+        validating the blockchain network.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Contracts</h3>
+      <p>
+        MSTC can be used within applications and
+        smart-contract ecosystems built on MST.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Web3 Applications</h3>
+      <p>
+        MSTC forms part of the economic layer for
+        applications deployed on the network.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Developer Tools</h3>
+      <p>
+        Solidity, Remix, MetaMask and Hardhat can
+        be used with the EVM-compatible network.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="malayalam">
+
+  <h2 class="section-title">
+    MST Blockchain — മലയാളത്തിൽ
+  </h2>
+
+  <div class="malayalam-box">
+
+    <h3>MST Blockchain എന്താണ്?</h3>
+
+    <p>
+      MST Blockchain ഒരു Public Layer-1 Blockchain ആണ്.
+      EVM compatible ആയതിനാൽ Ethereum ecosystem-ൽ
+      ഉപയോഗിക്കുന്ന പല developer tools ഉപയോഗിച്ച്
+      MST network-ലും Smart Contract, NFT, Token,
+      RWA തുടങ്ങിയ applications നിർമ്മിക്കാൻ കഴിയും.
+    </p>
+
+    <br>
+
+    <h3>MSTC എന്താണ്?</h3>
+
+    <p>
+      MSTC ആണ് MST Blockchain-ന്റെ native asset.
+      Network transaction fees, blockchain ecosystem
+      applications തുടങ്ങിയവയിൽ MSTC ഉപയോഗിക്കാം.
+    </p>
+
+    <br>
+
+    <h3>Developer-കൾക്ക് എന്ത് ചെയ്യാം?</h3>
+
+    <p>
+      Solidity ഉപയോഗിച്ച് Smart Contract നിർമ്മിക്കുകയും,
+      Remix / Hardhat ഉപയോഗിച്ച് development നടത്തുകയും,
+      MetaMask ഉപയോഗിച്ച് blockchain application-ുകളുമായി
+      connect ചെയ്യുകയും ചെയ്യാം.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="register" class="register">
+
+  <h2>
+    Join MST Blockchain
+  </h2>
+
+  <p>
+    MST Blockchain portal വഴി registration ആരംഭിക്കുക.
+  </p>
+
+  <a
+    class="btn primary"
+    href="https://mstblockchain.com/portal/register/VeY52672"
+    target="_blank"
+  >
+    🚀 REGISTER NOW
+  </a>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Official Links
+  </h2>
+
+  <div class="buttons">
+
+    <a
+      class="btn secondary"
+      href="https://mstblockchain.com"
+      target="_blank"
+    >
+      MST Blockchain
+    </a>
+
+    <a
+      class="btn secondary"
+      href="https://mstscan.com"
+      target="_blank"
+    >
+      MSTScan
+    </a>
+
+    <a
+      class="btn secondary"
+      href="https://testnet.mstscan.com"
+      target="_blank"
+    >
+      Testnet Explorer
+    </a>
+
+    <a
+      class="btn secondary"
+      href="https://mstblockchain.com/portal/register/VeY52672"
+      target="_blank"
+    >
+      Registration
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>
+    © 2026 <strong>AJJRA TECHNO HUB</strong>
+  </p>
+
+  <p>
+    MST Blockchain Information & Web3 Technology
+  </p>
+
+  <br>
+
+  <small>
+    Information on this website is for educational and
+    informational purposes. Network specifications may
+    change; refer to official MST sources for current details.
+  </small>
+
+</footer>
+
+</body>
+</html>
