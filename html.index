@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MST Blockchain information, ecosystem, technology, MSTC and registration portal.">
+  <meta name="theme-color" content="#07111f">
+  <title>MST Blockchain | MSTC Web3 Hub</title>
+  <style>
+    :root{
+      --bg:#07111f; --bg2:#0b1728; --card:#0f2035; --line:#203752;
+      --text:#f4f8ff; --muted:#a9b8ca; --accent:#43e0b3; --accent2:#6da7ff;
+      --max:1150px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#091827 55%,#07111f);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:auto;padding:0 20px}
+    nav{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.88);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08)}
+    .navin{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-weight:900;letter-spacing:.08em;font-size:20px}
+    .logo span{color:var(--accent)}
+    .links{display:flex;gap:20px;align-items:center}
+    .links a{font-size:14px;color:var(--muted)}
+    .links a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#35b8ff);color:#041019;font-weight:800;border:0;cursor:pointer}
+    .btn.secondary{background:transparent;color:#fff;border:1px solid var(--line)}
+    .hero{padding:95px 0 70px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle,rgba(67,224,179,.18),transparent 68%);right:-180px;top:-180px}
+    .badge{display:inline-block;padding:7px 12px;border:1px solid rgba(67,224,179,.3);
+      color:var(--accent);border-radius:999px;font-size:13px;font-weight:700;background:rgba(67,224,179,.06)}
+    h1{font-size:clamp(42px,7vw,78px);line-height:1.02;margin:20px 0 18px;max-width:850px}
+    h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+    .lead{font-size:19px;color:var(--muted);max-width:760px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    section{padding:72px 0}
+    .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+    h2{font-size:clamp(30px,5vw,48px);margin:8px 0 14px;line-height:1.1}
+    .sectionlead{color:var(--muted);max-width:760px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(15,32,53,.96),rgba(10,24,40,.96));
+      border:1px solid var(--line);border-radius:18px;padding:24px}
+    .card h3{margin:0 0 8px;font-size:20px}
+    .card p{margin:0;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}
+    .stat{padding:22px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
+    .stat strong{display:block;font-size:28px;color:var(--accent)}
+    .stat span{color:var(--muted);font-size:13px}
+    .two{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+    .list{display:grid;gap:10px;margin-top:18px}
+    .item{padding:13px 15px;border:1px solid var(--line);border-radius:12px;color:var(--muted)}
+    .item b{color:#fff}
+    .register{border:1px solid rgba(67,224,179,.28);background:
+      radial-gradient(circle at 85% 15%,rgba(67,224,179,.12),transparent 35%),var(--card);
+      border-radius:24px;padding:38px}
+    .register p{color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:13px}
+    .notice{font-size:12px;color:#8293a8;margin-top:18px}
+    .mobile{display:none}
+    @media(max-width:800px){
+      .links{display:none}.mobile{display:block}
+      .grid,.stats,.two{grid-template-columns:1fr}
+      .hero{padding-top:70px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navin">
+    <a class="logo" href="#home">MST<span>BLOCKCHAIN</span></a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#technology">Technology</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#usecases">Use Cases</a><a href="#network">Network</a><a href="#tokenomics">MSTC</a>
+      <a href="#register">Register</a>
+    </div>
+    <a class="btn mobile" href="https://mstblockchain.com/portal/register/VeY52672" target="_blank" rel="noopener">Register</a>
+  </div>
+</nav>
+
+<main id="home">
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">PUBLIC • EVM-COMPATIBLE • LAYER 1</span>
+      <h1>Explore the <span>MST Blockchain</span> ecosystem.</h1>
+      <p class="lead">
+        A modern information hub for MST Blockchain, MSTC, its technology, ecosystem,
+        developer tools and registration portal.
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://mstblockchain.com/portal/register/VeY52672" target="_blank" rel="noopener">
+          Create / Register on MST
+        </a>
+        <a class="btn secondary" href="https://mstscan.com/" target="_blank" rel="noopener">
+          Open MST Explorer
+        </a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>3.0s</strong><span>Average block time</span></div>
+        <div class="stat"><strong>4000+</strong><span>TPS claimed in MST materials</span></div>
+        <div class="stat"><strong>0.001</strong><span>MSTC average fee shown on MST site</span></div>
+        <div class="stat"><strong>EVM</strong><span>Ethereum-compatible development</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow">01 / About</div>
+      <h2>What is MST Blockchain?</h2>
+      <p class="sectionlead">
+        MST Blockchain describes itself as a public, EVM-compatible Layer-1 blockchain
+        developed by Masterstroke Technosoft. Its materials describe low-cost transactions,
+        fast block processing and support for decentralized applications.
+      </p>
+      <div class="grid">
+        <article class="card"><h3>Layer 1</h3><p>MST operates as an independent blockchain network rather than an application-layer token on another chain.</p></article>
+        <article class="card"><h3>MSTC</h3><p>MSTC is the native coin used for network utility such as transaction fees and protocol functions.</p></article>
+        <article class="card"><h3>EVM Compatible</h3><p>Developers can use familiar Ethereum tooling such as Solidity, MetaMask, Remix and Hardhat.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="technology">
+    <div class="wrap">
+      <div class="eyebrow">02 / Technology</div>
+      <h2>Core technology</h2>
+      <div class="grid">
+        <article class="card"><h3>PoSA</h3><p>MST documentation describes a Proof of Staked Authority consensus design for validator-based network operation.</p></article>
+        <article class="card"><h3>Fast finality</h3><p>MST materials state an average block time of approximately 3 seconds and rapid transaction finality.</p></article>
+        <article class="card"><h3>Smart Contracts</h3><p>Solidity-based smart contracts and EVM-compatible decentralized applications can be deployed using common Web3 tools.</p></article>
+        <article class="card"><h3>DAO Governance</h3><p>MST's whitepaper describes staking, delegation and on-chain governance mechanisms.</p></article>
+        <article class="card"><h3>Developer Friendly</h3><p>Ethereum-compatible tools reduce the learning curve for developers already familiar with EVM networks.</p></article>
+        <article class="card"><h3>Data & Verification</h3><p>The ecosystem highlights blockchain-based certificates, document verification and auditable records.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecosystem">
+    <div class="wrap">
+      <div class="eyebrow">03 / Ecosystem</div>
+      <h2>Products & protocols</h2>
+      <div class="grid">
+        <article class="card"><h3>SARAL Protocol</h3><p>A simplified SDK/web protocol intended to make on-chain onboarding easier.</p></article>
+        <article class="card"><h3>WASMify</h3><p>A protocol described by MST for connecting Web2 processing with Web3 verification.</p></article>
+        <article class="card"><h3>BridgeKey</h3><p>A multi-chain wallet product presented as part of the MST ecosystem.</p></article>
+        <article class="card"><h3>MST Buddy</h3><p>An AI-powered assistant for learning about and interacting with the MST ecosystem.</p></article>
+        <article class="card"><h3>ProofEasy</h3><p>A blockchain-powered document verification product associated with the MST ecosystem.</p></article>
+        <article class="card"><h3>ChainPay</h3><p>A crypto payment gateway presented on the MST Blockchain ecosystem site.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="usecases">
+    <div class="wrap">
+      <div class="eyebrow">04 / Use Cases</div>
+      <h2>What can be built on MST?</h2>
+      <div class="two">
+        <div class="card">
+          <div class="list">
+            <div class="item"><b>RWA:</b> tokenized real estate and other real-world assets</div>
+            <div class="item"><b>Carbon:</b> carbon-credit tracking</div>
+            <div class="item"><b>NFT:</b> NFT ticketing and digital ownership</div>
+            <div class="item"><b>Identity:</b> digital identity and KYC systems</div>
+            <div class="item"><b>Supply Chain:</b> transparent product tracking</div>
+            <div class="item"><b>Certificates:</b> verifiable on-chain credentials</div>
+            <div class="item"><b>Gaming:</b> blockchain-based asset ownership</div>
+            <div class="item"><b>Governance:</b> decentralized voting and DAO applications</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>For developers</h3>
+          <p>
+            Build Solidity smart contracts, connect a wallet, deploy an EVM dApp and
+            use blockchain transactions for verification and application logic.
+          </p>
+          <div class="actions">
+            <a class="btn secondary" href="https://github.com/mst-chain" target="_blank" rel="noopener">MST GitHub</a>
+            <a class="btn secondary" href="https://github.com/mst-chain/whitepaper" target="_blank" rel="noopener">Whitepaper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="network">
+    <div class="wrap">
+      <div class="eyebrow">05 / Network</div>
+      <h2>MST Network Details</h2>
+      <div class="grid">
+        <article class="card"><h3>Consensus</h3><p>Official MST whitepaper describes Parlia, a Proof of Staked Authority (PoSA) consensus design with stake-based validator selection.</p></article>
+        <article class="card"><h3>Finality</h3><p>MST's whitepaper describes fast finality, with approximately 3-second blocks and finality after two block confirmations.</p></article>
+        <article class="card"><h3>Validator Set</h3><p>Validators are selected according to total stake, including self-stake and delegated stake; the whitepaper also describes standby validators and slashing.</p></article>
+        <article class="card"><h3>Governance</h3><p>Staking credits, delegation, proposals, voting and timelocked execution are described in MST's on-chain governance framework.</p></article>
+        <article class="card"><h3>Native Asset</h3><p>MSTC is described as the native coin used for transaction fees, validator incentives, governance and network utility.</p></article>
+        <article class="card"><h3>Developer Stack</h3><p>EVM compatibility supports familiar Ethereum tooling such as MetaMask, Remix, Hardhat and Truffle.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tokenomics">
+    <div class="wrap">
+      <div class="eyebrow">06 / Tokenomics</div>
+      <h2>MSTC Tokenomics</h2>
+      <div class="two">
+        <div class="card">
+          <h3>According to the MST Whitepaper</h3>
+          <div class="list">
+            <div class="item"><b>Genesis supply:</b> 50 billion MSTC</div>
+            <div class="item"><b>2024 burn:</b> whitepaper states a major burn on December 31, 2024</div>
+            <div class="item"><b>Stated post-burn circulation:</b> 8,401,387,498 MSTC</div>
+            <div class="item"><b>Initial block reward:</b> 200 MSTC per block</div>
+            <div class="item"><b>Halving:</b> described as occurring every two years</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Important</h3>
+          <p>
+            Token supply, circulating supply, rewards and market data can change.
+            This page presents statements from MST's published materials and is not
+            investment advice or a guarantee of future token value or returns.
+          </p>
+          <div class="actions">
+            <a class="btn secondary" href="https://github.com/mst-chain/whitepaper" target="_blank" rel="noopener">Read Whitepaper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="malayalam">
+    <div class="wrap">
+      <div class="eyebrow">07 / Malayalam</div>
+      <h2>MST Blockchain — മലയാളത്തിൽ</h2>
+      <div class="card">
+        <p>
+          MST Blockchain ഒരു Layer-1 blockchain network ആണ്. MSTയുടെ ഔദ്യോഗിക whitepaper
+          പ്രകാരം ഇത് EVM-compatible ആണ്, അതിനാൽ Solidity smart contract, MetaMask, Remix,
+          Hardhat തുടങ്ങിയ tools ഉപയോഗിച്ച് applications നിർമ്മിക്കാം. MSTC ആണ് network-ന്റെ
+          native coin. Consensus ആയി Parlia / Proof of Staked Authority (PoSA) സംവിധാനം
+          whitepaper വിവരിക്കുന്നു.
+        </p>
+        <p style="margin-top:15px">
+          Staking, delegation, validator participation, DAO-style governance, NFT, RWA,
+          supply-chain, document verification, carbon-credit തുടങ്ങിയ use cases-ുകൾ
+          MST ecosystem-ൽ നിർമ്മിക്കാവുന്നതാണ്. ഉപയോഗിക്കുന്ന application-നും token activity-ക്കും
+          ബാധകമായ local laws പ്രത്യേകം പരിശോധിക്കണം.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <div class="wrap">
+      <div class="register">
+        <div class="eyebrow">08 / Registration</div>
+        <h2>Join MST Blockchain</h2>
+        <p>
+          Use the registration/referral link supplied for this website. The button opens
+          the MST portal directly in a new tab.
+        </p>
+        <a class="btn" href="https://mstblockchain.com/portal/register/VeY52672" target="_blank" rel="noopener">
+          REGISTER NOW
+        </a>
+        <p class="notice">
+          Note: This website is an independent information/landing page. It is not an
+          official MST Blockchain website unless separately authorized by MST. Registration,
+          token use, staking, investment and other activities may be subject to applicable
+          laws and the terms of the relevant service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sources">
+    <div class="wrap">
+      <div class="eyebrow">09 / Official Sources</div>
+      <h2>Verify the information</h2>
+      <div class="grid">
+        <article class="card"><h3>MST Blockchain</h3><p>Official MST website and portal.</p><div class="actions"><a class="btn secondary" href="https://mstblockchain.com/" target="_blank" rel="noopener">Open Official Site</a></div></article>
+        <article class="card"><h3>MST GitHub</h3><p>Public repositories published by the MST Chain GitHub organization.</p><div class="actions"><a class="btn secondary" href="https://github.com/mst-chain" target="_blank" rel="noopener">Open GitHub</a></div></article>
+        <article class="card"><h3>MST Whitepaper</h3><p>Technical architecture, consensus, validators, tokenomics and governance.</p><div class="actions"><a class="btn secondary" href="https://github.com/mst-chain/whitepaper/blob/main/WHITEPAPER.md" target="_blank" rel="noopener">Open Whitepaper</a></div></article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>AJJRA TECHNO HUB • MST Blockchain Information Hub</strong><br>
+    Independent information website built by AJJRA TECHNO HUB and designed for GitHub Pages. MST trademarks, services and claims belong
+    to their respective owners.
+  </div>
+</footer>
+
+</body>
+</html>
