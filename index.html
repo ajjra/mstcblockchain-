@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSTC Blockchain | MSTCയെ അറിയാം</title>
+
+<meta name="description"
+content="MSTC Blockchain എന്താണ്, എങ്ങനെ പ്രവർത്തിക്കുന്നു, Layer-1, EVM, Validator, NFT, RWA, DeFi തുടങ്ങിയവ മലയാളത്തിൽ മനസ്സിലാക്കാം.">
+
+<meta name="author" content="AJJRA TECHNO HUB">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    "Noto Sans Malayalam",
+    "Nirmala UI",
+    Arial,
+    sans-serif;
+    background:#050b12;
+    color:#f4f8fb;
+    line-height:1.8;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,11,18,.95);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    min-height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#31ef79;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    font-size:14px;
+}
+
+.nav-links a{
+    color:#b8c4d2;
+}
+
+.nav-links a:hover{
+    color:#31ef79;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:12px;
+    font-weight:900;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:#31ef79;
+    color:#031008;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 35px rgba(49,239,121,.25);
+}
+
+.btn-outline{
+    border:1px solid #31ef79;
+    color:#31ef79;
+}
+
+.btn-outline:hover{
+    background:#31ef79;
+    color:#031008;
+}
+
+/* HERO */
+
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(circle at 10% 20%,rgba(49,239,121,.15),transparent 30%),
+    radial-gradient(circle at 90% 20%,rgba(35,100,255,.14),transparent 30%);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 14px;
+    border:1px solid rgba(49,239,121,.35);
+    background:rgba(49,239,121,.08);
+    color:#31ef79;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(43px,7vw,75px);
+    line-height:1.12;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#31ef79;
+}
+
+.hero p{
+    color:#adb9c8;
+    font-size:18px;
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    background:linear-gradient(145deg,#111e2d,#08121e);
+    border:1px solid rgba(255,255,255,.09);
+    padding:35px;
+    border-radius:28px;
+    box-shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+.coin{
+    width:155px;
+    height:155px;
+    border-radius:50%;
+    background:#31ef79;
+    color:#031008;
+    margin:0 auto 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    font-weight:900;
+    box-shadow:0 0 70px rgba(49,239,121,.22);
+}
+
+.hero-card h2{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.hero-card p{
+    text-align:center;
+    font-size:14px;
+    margin:0;
+}
+
+/* SECTION */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 50px;
+}
+
+.section-title h2{
+    font-size:40px;
+    line-height:1.3;
+    margin-bottom:14px;
+}
+
+.section-title p{
+    color:#9eabb9;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+    padding:28px;
+    border-radius:20px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(49,239,121,.35);
+}
+
+.icon{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aab6c5;
+    font-size:15px;
+}
+
+/* ABOUT */
+
+.about-intro{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#b4c0cd;
+    font-size:17px;
+}
+
+/* TECHNOLOGY */
+
+.dark-section{
+    background:#07101a;
+}
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.tech-box{
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:20px;
+}
+
+.tech-box h3{
+    color:#31ef79;
+    margin-bottom:12px;
+}
+
+.tech-box p{
+    color:#aab6c5;
+}
+
+/* FLOW */
+
+.flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.flow-card{
+    text-align:center;
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px 15px;
+}
+
+.number{
+    width:45px;
+    height:45px;
+    background:#31ef79;
+    color:#031008;
+    border-radius:50%;
+    margin:0 auto 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+}
+
+/* NETWORK */
+
+.network-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.stat{
+    text-align:center;
+    padding:30px 15px;
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+}
+
+.stat strong{
+    display:block;
+    color:#31ef79;
+    font-size:29px;
+    margin-bottom:5px;
+}
+
+.stat span{
+    color:#aab6c5;
+    font-size:13px;
+}
+
+/* USE CASE */
+
+.use-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.use{
+    padding:28px;
+    border-radius:20px;
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.use h3{
+    margin-bottom:10px;
+}
+
+.use p{
+    color:#aab6c5;
+    font-size:14px;
+}
+
+/* REGISTRATION */
+
+.register{
+    background:
+    radial-gradient(circle at 50% 0,
+    rgba(49,239,121,.15),
+    transparent 50%);
+}
+
+.register-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    padding:55px 30px;
+    border-radius:28px;
+    background:linear-gradient(145deg,#102031,#08121d);
+    border:1px solid rgba(49,239,121,.22);
+}
+
+.register-box h2{
+    font-size:43px;
+    line-height:1.3;
+    margin-bottom:15px;
+}
+
+.register-box > p{
+    color:#aab6c5;
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.steps{
+    max-width:650px;
+    margin:30px auto;
+    text-align:left;
+}
+
+.step{
+    background:#07111c;
+    border:1px solid rgba(255,255,255,.06);
+    padding:15px 18px;
+    margin:10px 0;
+    border-radius:12px;
+}
+
+.step b{
+    color:#31ef79;
+}
+
+/* FAQ */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+    padding:18px 20px;
+    border-radius:14px;
+    margin-bottom:12px;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:800;
+}
+
+details p{
+    color:#aab6c5;
+    margin-top:12px;
+}
+
+/* WARNING */
+
+.notice{
+    max-width:900px;
+    margin:auto;
+    padding:25px;
+    border-radius:18px;
+    background:#0b1521;
+    border:1px solid rgba(255,255,255,.08);
+    color:#9facbb;
+    font-size:13px;
+}
+
+/* FINAL CTA */
+
+.final{
+    text-align:center;
+}
+
+.final h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.final p{
+    color:#aab6c5;
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#03070c;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:45px 0;
+}
+
+.footer{
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:24px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#31ef79;
+}
+
+.footer p{
+    color:#778596;
+    font-size:13px;
+    margin-top:8px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#9ba8b7;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding:90px 0;
+        min-height:auto;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .grid,
+    .use-grid,
+    .tech-grid{
+        grid-template-columns:1fr;
+    }
+
+    .network-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .flow{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .network-grid,
+    .flow{
+        grid-template-columns:1fr;
+    }
+
+    .buttons .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .register-box h2,
+    .final h2{
+        font-size:33px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#home" class="logo">
+MST<span>C</span>
+</a>
+
+<nav class="nav-links">
+<a href="#about">MSTC</a>
+<a href="#technology">ടെക്നോളജി</a>
+<a href="#ecosystem">Ecosystem</a>
+<a href="#register">രജിസ്റ്റർ</a>
+<a href="#faq">FAQ</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+MSTC BLOCKCHAIN ECOSYSTEM
+</div>
+
+<h1>
+MSTC Blockchain<br>
+<span>എന്താണ്? അറിയാം.</span>
+</h1>
+
+<p>
+Blockchain എന്താണെന്നും, MSTC എന്താണെന്നും,
+MST Blockchain എങ്ങനെ പ്രവർത്തിക്കുന്നുവെന്നും
+അതിന്റെ വിവിധ ഉപയോഗങ്ങൾ എന്തൊക്കെയാണെന്നും
+ലളിതമായി മനസ്സിലാക്കാം.
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-primary"
+href="https://mstblockchain.com/portal/register/VeY52672"
+target="_blank">
+MSTC-യിൽ രജിസ്റ്റർ ചെയ്യുക →
+</a>
+
+<a class="btn btn-outline"
+href="#about">
+ആദ്യം മനസ്സിലാക്കാം
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="coin">
+MSTC
+</div>
+
+<h2>MSTC Blockchain</h2>
+
+<p>
+Layer-1 • EVM Compatible • Web3
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>MSTC എന്താണ്?</h2>
+
+<p>
+MSTCയും MST Blockchain ecosystem-ഉം ലളിതമായി മനസ്സിലാക്കാം.
+</p>
+
+</div>
+
+<p class="about-intro">
+
+MST Blockchain ഒരു public Layer-1 blockchain
+ecosystem ആണ്. Blockchain transactions, smart contracts,
+digital assets, decentralized applications തുടങ്ങിയ
+വിവിധ blockchain-based പ്രവർത്തനങ്ങൾക്ക് network
+infrastructure നൽകുക എന്നതാണ് ഇതിന്റെ പ്രധാന ആശയം.
+
+MSTC എന്നത് MST Blockchain ecosystem-ുമായി ബന്ധപ്പെട്ട
+native asset ആണ്.
+
+</p>
+
+<br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">⛓️</div>
+
+<h3>Layer-1 Blockchain</h3>
+
+<p>
+മറ്റൊരു blockchain-ന്റെ മുകളിൽ മാത്രം പ്രവർത്തിക്കുന്ന
+system അല്ലാതെ സ്വന്തം blockchain network ആയി
+പ്രവർത്തിക്കുന്ന അടിസ്ഥാന network-നെയാണ് Layer-1
+എന്ന് പറയുന്നത്.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🪙</div>
+
+<h3>MSTC</h3>
+
+<p>
+MSTC എന്നത് MST Blockchain ecosystem-ുമായി ബന്ധപ്പെട്ട
+native asset ആണ്. Network-ൽ ലഭ്യമായ പ്രവർത്തനങ്ങൾക്കും
+ecosystem features-നും അനുസരിച്ച് ഇത് ഉപയോഗിക്കാം.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>Web3</h3>
+
+<p>
+Wallet, blockchain, smart contract, digital assets,
+decentralized applications എന്നിവ തമ്മിൽ ബന്ധിപ്പിക്കുന്ന
+പുതിയ internet ecosystem ആശയമാണ് Web3.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section class="dark-section" id="technology">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>MST Blockchain Technology</h2>
+
+<p>
+MST Blockchain-ന്റെ പ്രധാന സാങ്കേതിക ആശയങ്ങൾ.
+</p>
+
+</div>
+
+
+<div class="tech-grid">
+
+<div class="tech-box">
+
+<h3>🔗 Public Blockchain</h3>
+
+<p>
+Public blockchain network-ൽ blockchain data,
+transactions തുടങ്ങിയവ network-ന്റെ സംവിധാനത്തിലൂടെ
+verify ചെയ്യാൻ സാധിക്കും.
+</p>
+
+</div>
+
+
+<div class="tech-box">
+
+<h3>⚡ EVM Compatible</h3>
+
+<p>
+MST Blockchain EVM-compatible architecture പിന്തുണയ്ക്കുന്നു.
+അതുകൊണ്ട് Ethereum ecosystem-ൽ ഉപയോഗിക്കുന്ന പല
+blockchain concepts-ഉം ഇവിടെ പ്രസക്തമാണ്.
+</p>
+
+</div>
+
+
+<div class="tech-box">
+
+<h3>📜 Smart Contract</h3>
+
+<p>
+മുൻകൂട്ടി നിശ്ചയിച്ച നിയമങ്ങൾക്കനുസരിച്ച് blockchain-ൽ
+പ്രവർത്തിക്കുന്ന program ആണ് Smart Contract.
+Token, NFT, DeFi തുടങ്ങിയ applications-ൽ ഇത് ഉപയോഗിക്കാം.
+</p>
+
+</div>
+
+
+<div class="tech-box">
+
+<h3>🛡️ Validator</h3>
+
+<p>
+Blockchain network-ന്റെ പ്രവർത്തനവും transaction
+validation-ഉം protocol നിർദേശിക്കുന്ന രീതിയിൽ
+നടത്തുന്നതിൽ validators പങ്കാളികളാകുന്നു.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW BLOCKCHAIN WORKS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Blockchain എങ്ങനെ പ്രവർത്തിക്കുന്നു?</h2>
+
+<p>
+ഒരു transaction നടക്കുമ്പോൾ സാധാരണയായി സംഭവിക്കുന്ന
+പ്രക്രിയ ലളിതമായി നോക്കാം.
+</p>
+
+</div>
+
+
+<div class="flow">
+
+<div class="flow-card">
+
+<div class="number">1</div>
+
+<h3>Wallet</h3>
+
+<p>
+User compatible wallet ഉപയോഗിച്ച് transaction ആരംഭിക്കുന്നു.
+</p>
+
+</div>
+
+
+<div class="flow-card">
+
+<div class="number">2</div>
+
+<h3>Network</h3>
+
+<p>
+Transaction blockchain network-ലേക്ക് അയക്കപ്പെടുന്നു.
+</p>
+
+</div>
+
+
+<div class="flow-card">
+
+<div class="number">3</div>
+
+<h3>Validation</h3>
+
+<p>
+Network protocol അനുസരിച്ച് transaction validate ചെയ്യപ്പെടുന്നു.
+</p>
+
+</div>
+
+
+<div class="flow-card">
+
+<div class="number">4</div>
+
+<h3>Block</h3>
+
+<p>
+സ്ഥിരീകരിച്ച transaction blockchain record-ന്റെ ഭാഗമാകുന്നു.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NETWORK -->
+
+<section class="dark-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>MST Network</h2>
+
+<p>
+പൊതുവായി പ്രസിദ്ധീകരിച്ച MST network വിവരങ്ങളിൽ
+കാണുന്ന ചില പ്രധാന കാര്യങ്ങൾ.
+</p>
+
+</div>
+
+
+<div class="network-grid">
+
+<div class="stat">
+
+<strong>Layer-1</strong>
+
+<span>
+Public Blockchain
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>EVM</strong>
+
+<span>
+Compatible
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>3 sec</strong>
+
+<span>
+Reported Average Block Time
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>80,000+</strong>
+
+<span>
+Reported Validators
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ECOSYSTEM -->
+
+<section id="ecosystem">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>MSTC Ecosystem-ൽ എന്തൊക്കെ?</h2>
+
+<p>
+Blockchain technology ഉപയോഗിക്കാവുന്ന ചില പ്രധാന മേഖലകൾ.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">💰</div>
+
+<h3>DeFi</h3>
+
+<p>
+Smart Contract ഉപയോഗിച്ച് decentralized financial
+applications നിർമ്മിക്കുന്ന blockchain മേഖലയാണ് DeFi.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>NFT</h3>
+
+<p>
+Unique digital assets-ന്റെ ownership അല്ലെങ്കിൽ
+representation blockchain-ൽ രേഖപ്പെടുത്താൻ NFT
+technology ഉപയോഗിക്കാം.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏢</div>
+
+<h3>RWA</h3>
+
+<p>
+Real-World Assets-നെ blockchain-based digital
+representation ആയി മാറ്റുന്ന ആശയമാണ് RWA tokenization.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌱</div>
+
+<h3>Carbon Credit</h3>
+
+<p>
+Carbon-related records, verification, ownership,
+retirement തുടങ്ങിയ പ്രവർത്തനങ്ങളിൽ blockchain
+technology ഉപയോഗിക്കാവുന്നതാണ്.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🚚</div>
+
+<h3>Supply Chain</h3>
+
+<p>
+ഒരു ഉൽപ്പന്നത്തിന്റെ വിവിധ ഘട്ടങ്ങളിലെ വിവരങ്ങൾ
+trace ചെയ്യുന്നതിനും രേഖപ്പെടുത്തുന്നതിനും blockchain
+ഉപയോഗിക്കാവുന്നതാണ്.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💎</div>
+
+<h3>Digital Assets</h3>
+
+<p>
+Token, NFT തുടങ്ങിയ blockchain-based digital assets
+സൃഷ്ടിക്കാനും കൈമാറ്റം ചെയ്യാനും അനുയോജ്യമായ
+applications നിർമ്മിക്കാം.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY BLOCKCHAIN -->
+
+<section class="dark-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Blockchain-ന്റെ പ്രധാന ആശയങ്ങൾ</h2>
+
+<p>
+Blockchain technology ശ്രദ്ധിക്കപ്പെടുന്നതിന്റെ ചില കാരണങ്ങൾ.
+</p>
+
+</div>
+
+
+<div class="use-grid">
+
+<div class="use">
+
+<h3>🔎 Transparency</h3>
+
+<p>
+Blockchain network-ന്റെ സ്വഭാവമനുസരിച്ച് transactions
+പരിശോധിക്കാനും verify ചെയ്യാനും സാധിക്കും.
+</p>
+
+</div>
+
+
+<div class="use">
+
+<h3>🔐 Security</h3>
+
+<p>
+Cryptography, wallets, consensus mechanisms തുടങ്ങിയ
+സാങ്കേതിക സംവിധാനങ്ങൾ blockchain security-യുടെ ഭാഗമാണ്.
+</p>
+
+</div>
+
+
+<div class="use">
+
+<h3>🌍 Global Network</h3>
+
+<p>
+Public blockchain networks വിവിധ സ്ഥലങ്ങളിൽ നിന്നുള്ള
+users-നെ supported applications വഴി ബന്ധിപ്പിക്കാം.
+</p>
+
+</div>
+
+
+<div class="use">
+
+<h3>🤝 Digital Ownership</h3>
+
+<p>
+Compatible wallets വഴി supported digital assets
+user-ന് നിയന്ത്രിക്കാനും കൈകാര്യം ചെയ്യാനും കഴിയും.
+</p>
+
+</div>
+
+
+<div class="use">
+
+<h3>⚙️ Automation</h3>
+
+<p>
+Smart contracts ഉപയോഗിച്ച് മുൻകൂട്ടി നിശ്ചയിച്ച
+നിയമങ്ങൾക്കനുസരിച്ചുള്ള blockchain പ്രവർത്തനങ്ങൾ
+automate ചെയ്യാം.
+</p>
+
+</div>
+
+
+<div class="use">
+
+<h3>🧱 Blockchain Record</h3>
+
+<p>
+സ്ഥിരീകരിച്ച blockchain records മാറ്റുന്നത് സാധാരണ
+database edit ചെയ്യുന്നതുപോലെ ലളിതമല്ല; network protocol
+അനുസരിച്ചുള്ള consensus ആവശ്യമാണ്.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REGISTRATION -->
+
+<section class="register" id="register">
+
+<div class="container">
+
+<div class="register-box">
+
+<div class="badge">
+MSTC REGISTRATION
+</div>
+
+<h2>
+MSTC-യിൽ എങ്ങനെ രജിസ്റ്റർ ചെയ്യാം?
+</h2>
+
+<p>
+MSTC ecosystem പരിചയപ്പെടാൻ ആഗ്രഹിക്കുന്നവർക്ക്
+താഴെയുള്ള registration link ഉപയോഗിച്ച് account
+registration ആരംഭിക്കാം.
+</p>
+
+
+<div class="steps">
+
+<div class="step">
+
+<b>ഘട്ടം 1</b><br>
+താഴെയുള്ള “MSTC-യിൽ രജിസ്റ്റർ ചെയ്യുക” button അമർത്തുക.
+</div>
+
+
+<div class="step">
+
+<b>ഘട്ടം 2</b><br>
+MSTC registration page-ൽ ആവശ്യമായ വിവരങ്ങൾ നൽകുക.
+</div>
+
+
+<div class="step">
+
+<b>ഘട്ടം 3</b><br>
+നിങ്ങളുടെ account സുരക്ഷിതമായി സൂക്ഷിക്കുക.
+</div>
+
+
+<div class="step">
+
+<b>ഘട്ടം 4</b><br>
+Registration പൂർത്തിയാക്കിയ ശേഷം ലഭ്യമായ
+MSTC ecosystem features മനസ്സിലാക്കുക.
+</div>
+
+</div>
+
+
+<a class="btn btn-primary"
+href="https://mstblockchain.com/portal/register/VeY52672"
+target="_blank">
+
+MSTC-യിൽ രജിസ്റ്റർ ചെയ്യുക →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IMPORTANT -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>രജിസ്റ്റർ ചെയ്യുന്നതിന് മുമ്പ്</h2>
+
+<p>
+ചില പ്രധാന കാര്യങ്ങൾ മനസ്സിലാക്കിയ ശേഷം മാത്രം മുന്നോട്ട് പോകുക.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">📖</div>
+
+<h3>ആദ്യം പഠിക്കുക</h3>
+
+<p>
+Blockchain, wallet, transaction, smart contract,
+digital asset തുടങ്ങിയ അടിസ്ഥാന കാര്യങ്ങൾ മനസ്സിലാക്കുക.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔑</div>
+
+<h3>Wallet സുരക്ഷ</h3>
+
+<p>
+Private key, seed phrase, recovery phrase എന്നിവ
+മറ്റാരുമായും share ചെയ്യരുത്.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">⚠️</div>
+
+<h3>Risk മനസ്സിലാക്കുക</h3>
+
+<p>
+Digital assets-ൽ market, technical, security,
+regulatory risks ഉണ്ടാകാം. Registration മാത്രം
+profit ഉറപ്പാക്കുന്നില്ല.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq" class="dark-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>പതിവായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ</h2>
+
+<p>
+MSTCയെക്കുറിച്ചുള്ള ചില സാധാരണ ചോദ്യങ്ങൾ.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<details>
+
+<summary>MSTC എന്താണ്?</summary>
+
+<p>
+MST Blockchain ecosystem-ുമായി ബന്ധപ്പെട്ട native asset ആണ് MSTC.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>MST Blockchain എന്താണ്?</summary>
+
+<p>
+Blockchain transactions, smart contracts, digital assets,
+decentralized applications തുടങ്ങിയവയ്ക്കായി ഉപയോഗിക്കാവുന്ന
+public Layer-1 blockchain network ആണ് MST.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Layer-1 എന്താണ്?</summary>
+
+<p>
+സ്വന്തമായി blockchain network, consensus, transaction
+processing തുടങ്ങിയ അടിസ്ഥാന സംവിധാനങ്ങൾ ഉള്ള blockchain
+network-നെയാണ് Layer-1 എന്ന് വിളിക്കുന്നത്.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>EVM എന്താണ്?</summary>
+
+<p>
+Ethereum Virtual Machine എന്നതിന്റെ ചുരുക്കപ്പേരാണ് EVM.
+Smart contracts പ്രവർത്തിപ്പിക്കുന്ന blockchain execution
+environment എന്ന നിലയിലാണ് ഇത് പ്രധാനമായും ഉപയോഗിക്കുന്നത്.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Validator എന്താണ്?</summary>
+
+<p>
+Blockchain network protocol അനുസരിച്ച് transactions
+validate ചെയ്യുന്നതിനും network പ്രവർത്തനത്തിൽ
+പങ്കെടുക്കുന്നതിനും validators സഹായിക്കുന്നു.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>MSTC എന്തൊക്കെ മേഖലകളിൽ ഉപയോഗിക്കാം?</summary>
+
+<p>
+Network-ന്റെ supported features അനുസരിച്ച് DeFi, NFT,
+RWA/tokenization, digital assets, supply-chain,
+carbon-related applications തുടങ്ങിയ blockchain
+use cases ഉണ്ടാകാം.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Registration ചെയ്താൽ profit ഉറപ്പാണോ?</summary>
+
+<p>
+അല്ല. Registration അല്ലെങ്കിൽ blockchain ecosystem-ൽ
+പങ്കെടുക്കുന്നത് profit, income, reward അല്ലെങ്കിൽ
+investment return ഉറപ്പാക്കുന്നില്ല.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>Private key മറ്റൊരാൾക്ക് നൽകാമോ?</summary>
+
+<p>
+ഒരിക്കലും നൽകരുത്. Private key അല്ലെങ്കിൽ recovery phrase
+ആർക്കും share ചെയ്യരുത്.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DISCLAIMER -->
+
+<section>
+
+<div class="container">
+
+<div class="notice">
+
+<strong>പ്രധാന അറിയിപ്പ്</strong>
+
+<br><br>
+
+ഈ website AJJRA TECHNO HUB തയ്യാറാക്കിയ ഒരു
+informational page ആണ്. ഇത് official MST Blockchain
+website ആണെന്ന് ഉദ്ദേശിക്കുന്നില്ല.
+
+ഇവിടെ നൽകിയ വിവരങ്ങൾ വിദ്യാഭ്യാസപരവും പൊതുവായ
+വിവരങ്ങൾ നൽകുന്നതിനുമുള്ളതാണ്.
+
+Blockchain, digital assets എന്നിവയിൽ market risk,
+technical risk, security risk, regulatory risk എന്നിവ
+ഉണ്ടാകാം.
+
+Registration ചെയ്താൽ profit, income, reward അല്ലെങ്കിൽ
+investment return ഉറപ്പാകില്ല.
+
+പ്രധാനപ്പെട്ട വിവരങ്ങൾക്കായി official MST Blockchain
+platform-ിലെ നിലവിലെ വിവരങ്ങൾ പരിശോധിക്കുക.
+
+നിങ്ങളുടെ password, private key, seed phrase,
+recovery phrase എന്നിവ മറ്റാരുമായും share ചെയ്യരുത്.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="final">
+
+<div class="container">
+
+<h2>
+MSTCയെ ആദ്യം മനസ്സിലാക്കൂ.<br>
+ശേഷം നിങ്ങളുടെ തീരുമാനം എടുക്കൂ.
+</h2>
+
+<p>
+Blockchain technology എന്താണ്, MSTC ecosystem എന്താണ്,
+എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്നിവ മനസ്സിലാക്കിയ ശേഷം
+നിങ്ങൾക്ക് registration സംബന്ധിച്ച് സ്വന്തം തീരുമാനം
+എടുക്കാം.
+</p>
+
+<a class="btn btn-primary"
+href="https://mstblockchain.com/portal/register/VeY52672"
+target="_blank">
+
+MSTC-യിൽ രജിസ്റ്റർ ചെയ്യുക →
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer">
+
+<div class="footer-logo">
+AJJRA <span>TECHNO HUB</span>
+</div>
+
+<p>
+Blockchain • AI • Automation • Web3
+</p>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+<a href="#about">MSTC</a>
+<a href="#technology">Technology</a>
+<a href="#ecosystem">Ecosystem</a>
+<a href="#register">Register</a>
+<a href="#faq">FAQ</a>
+
+</div>
+
+<p>
+© 2026 AJJRA TECHNO HUB. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
