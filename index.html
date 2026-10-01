@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MST Blockchain (MSTC) - India's First Legally Compliant Layer-1 Blockchain</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #080d1a;
+            --card-bg: #111827;
+            --card-border: #1f293d;
+            --primary-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --green-glow: #10b981;
+            --text-main: #f3f4f6;
+            --text-sub: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Poppins', 'Manjari', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Hero Header */
+        header {
+            background: radial-gradient(circle at top, #1e1b4b 0%, var(--bg-color) 70%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .badge {
+            background: linear-gradient(90deg, #06b6d4, #3b82f6);
+            color: #000;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(180deg, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 12px;
+        }
+
+        .card-header i {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        ul li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-cyan);
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .inner-box {
+            background-color: #1a2333;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--card-border);
+        }
+
+        .inner-box h3 {
+            color: var(--accent-color, var(--primary-blue));
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        /* Call To Action Box */
+        .cta-container {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 2px solid var(--green-glow);
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .cta-container h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .contact-card {
+            margin-top: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1f293d;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .contact-card i {
+            color: var(--green-glow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .cta-container h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <span class="badge">India's First Layer-1 Blockchain</span>
+        <h1>🚀 MST Blockchain (MSTC)</h1>
+        <p>ഇന്ത്യയിലെ ആദ്യത്തെ നിയമപരമായ Layer 1 ബ്ലോക്ക്ചെയിൻ വിപ്ലവത്തിന്റെ ഭാഗമാകൂ!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Why Blockchain -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-link"></i>
+                <h2>എന്തുകൊണ്ട് ഒരു ബ്ലോക്ക്ചെയിൻ? (Why Use Blockchain?)</h2>
+            </div>
+            <ul>
+                <li><strong>സുതാര്യത (Transparency):</strong> കേന്ദ്രീകൃത സിസ്റ്റങ്ങളിൽ നടക്കാൻ സാധ്യതയുള്ള ഡാറ്റാ തിരിമറികൾ തടയുകയും സുതാര്യത ഉറപ്പാക്കുകയും ചെയ്യുന്നു[span_4](start_span)[span_4](end_span).</li>
+                <li><strong>ഉയർന്ന സുരക്ഷ (Immutability & Security):</strong> രേഖപ്പെടുത്തിയ ഡാറ്റ മാറ്റാനോ തിരിമറി നടത്താനോ കഴിയില്ല[span_5](start_span)[span_5](end_span).</li>
+                <li><strong>ഇടനിലക്കാരില്ല (No Middlemen):</strong> മൂന്നാം കക്ഷികളുടെ ഇടപെടലുകളില്ലാതെ നേരിട്ടുള്ള (Peer-to-Peer) ഇടപാടുകൾ സാധ്യമാക്കുന്നു[span_6](start_span)[span_6](end_span).</li>
+            </ul>
+        </div>
+
+        <!-- 2. Role in Web3 -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-globe"></i>
+                <h2>Web3-ൽ ബ്ലോക്ക്ചെയിന്റെ പങ്ക് (Role of Blockchain in Web3)</h2>
+            </div>
+            <ul>
+                <li><strong>ഡാറ്റാ ഉടമസ്ഥത (Data Ownership):</strong> യൂസറുടെ അസറ്റുകൾക്കും ഡാറ്റയ്ക്കും മേൽ പൂർണ്ണ നിയന്ത്രണവും അവകാശവും നൽകുന്നു[span_7](start_span)[span_7](end_span).</li>
+                <li><strong>Decentralized Apps (dApps):** സാമ്പത്തിക ഇടപാടുകൾക്കും സേവനങ്ങൾക്കുമായി ബാങ്കുകളെയോ ഇടനിലക്കാരെയോ ആശ്രയിക്കേണ്ടതില്ല[span_8](start_span)[span_8](end_span).</li>
+                <li><strong>Smart Contracts:</strong> തനിയെ പ്രവർത്തിക്കുന്ന വിശ്വസനീയവും മാറ്റമില്ലാത്തതുമായ കരാറുകൾ ഉറപ്പാക്കുന്നു[span_9](start_span)[span_9](end_span).</li>
+            </ul>
+        </div>
+
+        <!-- 3. Layer 1 System -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-layer-group"></i>
+                <h2>ഇന്ത്യയിലെ ആദ്യത്തെ നിയമാനുസൃത Layer-1 ബ്ലോക്ക്ചെയിൻ</h2>
+            </div>
+            <p style="margin-bottom: 15px; color: var(--text-sub);">ഇന്ത്യൻ നിയമവ്യവസ്ഥയ്ക്കും ഗവൺമെന്റ് മാനദണ്ഡങ്ങൾക്കും അനുസൃതമായി വികസിപ്പിച്ചെടുത്ത ഡിജിറ്റൽ ഇൻഫ്രാസ്ട്രക്ചറാണിത്[span_10](start_span)[span_10](end_span).</p>
+            <div class="grid">
+                <div class="inner-box">
+                    <h3>⚡ സവിശേഷതകൾ (Key Features)</h3>
+                    <ul>
+                        <li><strong>4000+ TPS:</strong> അതിവേഗ ട്രാൻസാക്ഷൻ സ്പീഡ്[span_11](start_span)[span_11](end_span).</li>
+                        <li><strong>Ultra-Low Fees:</strong> വെറും പൈസകൾ മാത്രം വരുന്ന കുറഞ്ഞ ഗ്യാസ് ഫീസ്[span_12](start_span)[span_12](end_span).</li>
+                        <li><strong>3-Second Block Time:</strong> വേഗതയേറിയ കൺഫർമേഷനുകൾ[span_13](start_span)[span_13](end_span).</li>
+                        <li><strong>PoSA Consensus:</strong> Proof of Staked Authority പ്രോട്ടോക്കോൾ[span_14](start_span)[span_14](end_span).</li>
+                        <li><strong>SARAL Protocol:</strong> മൊബൈൽ നമ്പറും Google SSO-യും വഴിയുള്ള ഈസി ഓൺബോർഡിംഗ്[span_15](start_span)[span_15](end_span).</li>
+                    </ul>
+                </div>
+                <div class="inner-box">
+                    <h3>🛡️ എൻക്രിപ്ഷൻ സുരക്ഷ (Security)</h3>
+                    <ul>
+                        <li><strong>Post-Quantum Security:</strong> ഭാവിയിലെ ക്വാണ്ടം കമ്പ്യൂട്ടർ ഭീഷണികളെ ചെറുക്കുന്ന ടെക്നോളജി[span_16](start_span)[span_16](end_span).</li>
+                        <li>എന്റർപ്രൈസ് ലെവൽ മൾട്ടി-സിഗ്നേച്ചർ സെക്യൂരിറ്റി[span_17](start_span)[span_17](end_span).</li>
+                        <li>ഓഡിറ്റ് ചെയ്ത സുതാര്യമായ സ്മാർട്ട് കോൺട്രാക്റ്റുകൾ[span_18](start_span)[span_18](end_span).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Projects & Companies -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-cubes"></i>
+                <h2>📱 90% ദൈനംദിന ഉപയോഗ സേവനങ്ങളും പ്രോജക്ടുകളും</h2>
+            </div>
+            <p style="margin-bottom: 20px; color: var(--text-sub);">നമ്മുടെ ദൈനംദിന ജീവിതത്തിലെ 90%-ത്തിലധികം സർവീസുകളെയും ബ്ലോക്ക്ചെയിനിലേക്ക് കൊണ്ടുവരുന്ന ശക്തമായ പ്രോജക്റ്റ് ഇക്കോസിസ്റ്റമാണിത്[span_19](start_span)[span_19](end_span).</p>
+            <div class="grid">
+                <div class="inner-box">
+                    <h3>🛠️ പ്രധാന പ്രോജക്റ്റുകൾ:</h3>
+                    <ul>
+                        <li><strong>BridgeKey:</strong> സുരക്ഷിതമായ മൾട്ടി-ചെയിൻ വാലറ്റ്[span_20](start_span)[span_20](end_span).</li>
+                        <li><strong>ChainPay:</strong> വ്യാപാരികൾക്കുള്ള ക്രിപ്റ്റോ പേയ്‌മെന്റ് ഗേറ്റ്‌വേ[span_21](start_span)[span_21](end_span).</li>
+                        <li><strong>ProofEasy:</strong> സർട്ടിഫിക്കറ്റ് വെരിഫിക്കേഷൻ സിസ്റ്റം[span_22](start_span)[span_22](end_span).</li>
+                        <li><strong>MST Buddy:</strong> 24/7 AI അടിസ്ഥാനമാക്കിയുള്ള ഹെൽപ്പ് അസിസ്റ്റന്റ്[span_23](start_span)[span_23](end_span).</li>
+                        <li><strong>MasterStroke Academy:</strong> Web3 വിദ്യാഭ്യാസ പ്ലാറ്റ്‌ഫോം[span_24](start_span)[span_24](end_span).</li>
+                    </ul>
+                </div>
+                <div class="inner-box">
+                    <h3>🏢 വന്ന കമ്പനികളും പങ്കാളികളും:</h3>
+                    <ul>
+                        <li>Web3 & FinTech സാങ്കേതിക കമ്പനികൾ[span_25](start_span)[span_25](end_span).</li>
+                        <li>റിയൽ എസ്റ്റേറ്റ് & സപ്ലൈ ചെയിൻ കമ്പനികൾ[span_26](start_span)[span_26](end_span).</li>
+                        <li>വിദ്യാഭ്യാസ അക്കാദമികളും സർട്ടിഫിക്കേഷൻ ബോർഡുകളും[span_27](start_span)[span_27](end_span).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Node Validator Opportunities -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-server"></i>
+                <h2>🖥️ Node Validator അവസരവും വരുമാനങ്ങളും</h2>
+            </div>
+            <p style="margin-bottom: 15px; color: var(--text-sub);">ബ്ലോക്ക്ചെയിൻ നെറ്റ്‌വർക്കിന്റെ സുരക്ഷ നിലനിർത്താനും ട്രാൻസാക്ഷനുകൾ വാലിഡേറ്റ് ചെയ്യാനും സഹായിക്കുന്നതിലൂടെ വൻ വരുമാനം നേടാം[span_28](start_span)[span_28](end_span).</p>
+            <ul>
+                <li><strong>Block Rewards:</strong> ഓരോ ബ്ലോക്ക് വാലിഡേറ്റ് ചെയ്യുമ്പോഴും MSTC ടോക്കൺ റിവാർഡുകൾ[span_29](start_span)[span_29](end_span).</li>
+                <li><strong>Transaction Fee Sharing:</strong> നെറ്റ്‌വർക്ക് ഇടപാട് ഫീസിന്റെ നിശ്ചിത വിഹിതം[span_30](start_span)[span_30](end_span).</li>
+                <li><strong>Fractional Node Economy:</strong> ചെറിയ തുകകൾ ഉപയോഗിച്ചും വാലിഡേറ്റർ ആകാനുള്ള അവസരം[span_31](start_span)[span_31](end_span).</li>
+                <li><strong>Governance Right:</strong> നെറ്റ്‌വർക്ക് തീരുമാനങ്ങളിലെ വോട്ടിംഗ് അവകാശം[span_32](start_span)[span_32](end_span).</li>
+            </ul>
+        </div>
+
+        <!-- Call to Action Box -->
+        <div class="cta-container">
+            <h2>🚀 ഇന്ന് തന്നെ ഈ അപൂർവ്വ അവസരത്തിന്റെ ഭാഗമാകൂ!</h2>
+            <p>ഇന്ത്യൻ Layer-1 ബ്ലോക്ക്ചെയിൻ വിപ്ലവത്തിൽ പങ്കാളിയായി നിങ്ങളുടെ ഡിജിറ്റൽ ഭാവി സുരക്ഷിതമാക്കൂ[span_33](start_span)[span_33](end_span).</p>
+            
+            <a href="https://mstblockchain.com/portal/register/VeY52672" class="cta-btn" target="_blank">
+                <i class="fa-solid fa-user-plus"></i> സൗജന്യമായി രജിസ്റ്റർ ചെയ്യൂ
+            </a>[span_34](start_span)[span_34](end_span)
+
+            <div style="margin-top: 25px;">
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>വിശദവിവരങ്ങൾക്ക് വിളിക്കുക: <strong>7012383340</strong></span>[span_35](start_span)[span_35](end_span)
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MST Blockchain Community Page. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
