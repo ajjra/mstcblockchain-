@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MST Blockchain (MSTC) - India's First Layer-1 Blockchain</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Manjari:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #030712;
+            --card-bg: rgba(17, 24, 39, 0.85);
+            --card-border: rgba(255, 255, 255, 0.12);
+            --accent-cyan: #06b6d4;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-green: #10b981;
+            --text-main: #ffffff;
+            --text-muted: #d1d5db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', 'Manjari', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-size: 1.1rem; /* ടെക്സ്റ്റ് വലുപ്പം വർദ്ധിപ്പിച്ചു */
+            font-weight: 600; /* എല്ലാ ടെക്സ്റ്റുകളും കൂടുതൽ വ്യക്തതയുള്ളതാക്കി */
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 40%);
+        }
+
+        /* Hero Header */
+        header {
+            padding: 90px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+            color: #000;
+            font-weight: 900;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+        }
+
+        header h1 {
+            font-size: 3.4rem;
+            font-weight: 900;
+            background: linear-gradient(180deg, #ffffff 30%, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(59, 130, 246, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--card-border);
+            padding-bottom: 15px;
+        }
+
+        .card-header i {
+            font-size: 2.2rem;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.15);
+            padding: 14px;
+            border-radius: 14px;
+        }
+
+        .card-header h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        /* Grid System */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1.5px solid var(--card-border);
+            border-radius: 16px;
+            padding: 26px;
+            transition: background 0.3s ease;
+        }
+
+        .feature-box:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-box h3 {
+            color: var(--accent-cyan);
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 14px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2rem;
+            color: var(--accent-green);
+        }
+
+        /* Call To Action Box */
+        .cta-container {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+            border: 2px solid var(--accent-green);
+            border-radius: 24px;
+            padding: 55px 25px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-container h2 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .cta-container p {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.35rem;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 25px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.7);
+        }
+
+        .contact-card {
+            margin-top: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+            border: 1.5px solid var(--card-border);
+        }
+
+        .contact-card i {
+            color: var(--accent-green);
+            font-size: 1.4rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 700;
+            border-top: 1px solid var(--card-border);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            .cta-container h2 { font-size: 1.8rem; }
+            .card { padding: 25px; }
+            body { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <span class="badge">India's First Layer-1 Blockchain</span>
+        <h1>🚀 MST Blockchain (MSTC)</h1>
+        <p>ഇന്ത്യയിലെ ആദ്യത്തെ നിയമപരമായ Layer-1 ബ്ലോക്ക്ചെയിൻ ശൃംഖലയിൽ പങ്കാളിയാകൂ. നിങ്ങളുടെ ഡിജിറ്റൽ ഭാവി സുരക്ഷിതമാക്കൂ.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Why Blockchain & Web3 -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-network-wired"></i>
+                <h2>എന്തിനാണ് ബ്ലോക്ക്ചെയിൻ & Web3?</h2>
+            </div>
+            <div class="grid-2">
+                <div class="feature-box">
+                    <h3><i class="fa-solid fa-shield-halved"></i> ഉയർന്ന സുരക്ഷ & സുതാര്യത</h3>
+                    <p>കേന്ദ്രീകൃത സിസ്റ്റങ്ങളിലെ <strong>ഡാറ്റാ തിരിമറികളും വ്യാജരേഖകളും</strong> പൂർണ്ണമായും തടയുന്നു. ഡാറ്റ മാറ്റമില്ലാതെ സുരക്ഷിതമായി സംരക്ഷിക്കപ്പെടുന്നു.</p>
+                </div>
+                <div class="feature-box">
+                    <h3><i class="fa-solid fa-users-slash"></i> ഇടനിലക്കാരില്ലാത്ത സിസ്റ്റം</h3>
+                    <p>മൂന്നാം കക്ഷികളുടെ അമിത ഇടപെടലോ കമ്മീഷനോ ഇല്ലാതെ <strong>നേരിട്ടുള്ള (Peer-to-Peer)</strong> സാമ്പത്തിക കൈമാറ്റങ്ങൾ സാധ്യമാക്കുന്നു.</p>
+                </div>
+                <div class="feature-box">
+                    <h3><i class="fa-solid fa-user-lock"></i> പൂർണ്ണ ഡാറ്റാ ഉടമസ്ഥത</h3>
+                    <p>Web3 സാങ്കേതികവിദ്യയിലൂടെ ഉപയോക്താക്കളുടെ <strong>ഡിജിറ്റൽ സ്വത്തുക്കൾക്കും ഡാറ്റയ്ക്കും മേൽ പൂർണ്ണ നിയന്ത്രണം</strong> ഉറപ്പാക്കുന്നു.</p>
+                </div>
+                <div class="feature-box">
+                    <h3><i class="fa-solid fa-file-contract"></i> Smart Contracts</h3>
+                    <p>സ്വയം പ്രവർത്തിക്കുന്ന <strong>വിശ്വസനീയവും മാറ്റമില്ലാത്തതുമായ ഡിജിറ്റൽ കരാറുകൾ</strong> പൂർണ്ണ സാമ്പത്തിക സുരക്ഷ നൽകുന്നു.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Layer 1 Features & Security -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-layer-group"></i>
+                <h2>ഇന്ത്യയിലെ ആദ്യത്തെ നിയമാനുസൃത Layer-1 സവിശേഷതകൾ</h2>
+            </div>
+            <div class="grid-2">
+                <div class="feature-box">
+                    <h3 style="color: var(--accent-blue);"><i class="fa-solid fa-bolt"></i> സാങ്കേതിക മികവ്</h3>
+                    <ul>
+                        <li><strong>4000+ TPS:</strong> അതിവേഗ ട്രാൻസാക്ഷൻ സ്പീഡ്.</li>
+                        <li><strong>Ultra-Low Fees:</strong> വെറും പൈസകൾ മാത്രം വരുന്ന കുറഞ്ഞ ഫീസ്.</li>
+                        <li><strong>3-Second Block Time:</strong> 3 സെക്കൻഡിൽ അതിവേഗ കൺഫർമേഷൻ.</li>
+                        <li><strong>SARAL Protocol:</strong> മൊബൈൽ നമ്പറും Google SSO-യും വഴി ലളിതമായ ഓൺബോർഡിംഗ്.</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3 style="color: var(--accent-purple);"><i class="fa-solid fa-lock"></i> ഉയർന്ന സെക്യൂരിറ്റി</h3>
+                    <ul>
+                        <li><strong>PoSA Consensus:</strong> Proof of Staked Authority വഴിയുള്ള മികച്ച സുരക്ഷ.</li>
+                        <li><strong>Post-Quantum Security:</strong> ഭാവിയിലെ ക്വാണ്ടം കമ്പ്യൂട്ടിംഗ് ഭീഷണികളെ ചെറുക്കുന്നു.</li>
+                        <li><strong>Multi-Sig Encryption:</strong> എന്റർപ്രൈസ് ഗ്രേഡ് മൾട്ടി-സിഗ്നേച്ചർ സുരക്ഷ.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Projects & Ecosystem -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-cubes"></i>
+                <h2>90% ദൈനംദിന സർവീസുകളും പ്രോജക്ടുകളും</h2>
+            </div>
+            <p style="margin-bottom: 20px; font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">
+                നമ്മുടെ ദൈനംദിന ജീവിതത്തിലെ <strong>90%-ത്തിലധികം സർവീസുകളെയും</strong> ബ്ലോക്ക്ചെയിനിലേക്ക് കൊണ്ടുവരുന്ന ശക്തമായ ഈക്കോസിസ്റ്റം.
+            </p>
+            <div class="grid-2">
+                <div class="feature-box">
+                    <h3>🛠️ പ്രധാന പ്രോജക്റ്റുകൾ</h3>
+                    <ul>
+                        <li><strong>BridgeKey:</strong> സുരക്ഷിതമായ മൾട്ടി-ചെയിൻ വാലറ്റ്.</li>
+                        <li><strong>ChainPay:</strong> വ്യാപാരികൾക്കുള്ള ക്രിപ്റ്റോ പേയ്‌മെന്റ് ഗേറ്റ്‌വേ.</li>
+                        <li><strong>ProofEasy:</strong> വ്യാജരേഖകൾ തടയുന്ന സർട്ടിഫിക്കറ്റ് വെരിഫിക്കേഷൻ.</li>
+                        <li><strong>MST Buddy:</strong> 24/7 AI ഹെൽപ്പ് അസിസ്റ്റന്റ്.</li>
+                        <li><strong>MasterStroke Academy:</strong> Web3 ലേണിംഗ് പ്ലാറ്റ്‌ഫോം.</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>🏢 പങ്കാളിത്ത ശൃംഖലകൾ</h3>
+                    <ul>
+                        <li><strong>FinTech & Web3</strong> എന്റർപ്രൈസുകൾ.</li>
+                        <li><strong>റിയൽ എസ്റ്റേറ്റ് & സപ്ലൈ ചെയിൻ</strong> കമ്പനികൾ.</li>
+                        <li><strong>വിദ്യാഭ്യാസ സ്ഥാപനങ്ങൾ</strong> & സർട്ടിഫിക്കേഷൻ ബോർഡുകൾ.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Node Validator Opportunities -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-server"></i>
+                <h2>Node Validator അവസരങ്ങളും ലൈഫ് ടൈം വരുമാനവും</h2>
+            </div>
+            <p style="margin-bottom: 20px; font-size: 1.2rem; font-weight: 700; color: var(--text-muted);">
+                നെറ്റ്‌വർക്ക് സുരക്ഷിതമാക്കാനും ട്രാൻസാക്ഷനുകൾ വാലിഡേറ്റ് ചെയ്യാനും സഹായിക്കുന്നതിലൂടെ <strong>സ്ഥിരമായ വലിയ വരുമാനം</strong> നേടാം.
+            </p>
+            <div class="grid-3">
+                <div class="feature-box">
+                    <h3>💰 Block Rewards</h3>
+                    <p>ഓരോ ബ്ലോക്ക് വാലിഡേറ്റ് ചെയ്യുമ്പോഴും MSTC ടോക്കണുകളായി <strong>സ്ഥിരമായ പാസീവ് ഇൻകം (Passive Income)</strong>.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>💸 Fee Sharing</h3>
+                    <p>നെറ്റ്‌വർക്കിൽ നടക്കുന്ന ഓരോ ഇടപാടിന്റെയും <strong>ഫീസ് വിഹിതം</strong> വാലിഡേറ്റർമാർക്ക് ലഭിക്കുന്നു.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🗳️ Governance Right</h3>
+                    <p>നെറ്റ്‌വർക്കിന്റെ സുപ്രധാന പ്രോട്ടോക്കോൾ തീരുമാനങ്ങളിൽ പങ്കാളിയാകാനുള്ള <strong>വോട്ടിംഗ് അവകാശം</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Box -->
+        <div class="cta-container">
+            <h2>🚀 വിപ്ലവകരമായ ഈ അവസരം ഉപയോഗപ്പെടുത്തൂ!</h2>
+            <p>ഇന്ത്യയിലെ ആദ്യത്തെ Layer-1 ബ്ലോക്ക്ചെയിനിൽ സൗജന്യമായി അക്കൗണ്ട് രജിസ്റ്റർ ചെയ്ത് നിങ്ങളുടെ ഡിജിറ്റൽ ഭാവി ആരംഭിക്കൂ.</p>
+            
+            <a href="https://mstblockchain.com/portal/register/VeY52672" class="cta-btn" target="_blank">
+                <i class="fa-solid fa-user-plus"></i> സൗജന്യമായി രജിസ്റ്റർ ചെയ്യൂ
+            </a>
+
+            <div style="margin-top: 15px;">
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>വിശദവിവരങ്ങൾക്ക് ബന്ധപ്പെടുക: <strong>7012383340</strong></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MST Blockchain Community Page. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
